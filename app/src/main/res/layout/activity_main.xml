@@ -1,76 +1,88 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/team1"/>
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"/>
+                style="@style/ScoreKeeperText"
+                android:paddingTop="@dimen/paddingTop"
+                android:text="@string/team1"
+                android:textSize="@dimen/headerTextSize" />
+
+            <TextView
+                android:id="@+id/pointsTeam1"
+                style="@style/ScoreKeeperText"
+                android:text="0"
+                android:textSize="@dimen/scoreTextSize" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/points"/>
+                style="@style/ButtonStyle"
+                android:onClick="addPointToTeam1"
+                android:text="@string/pluspoint" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sets"/>
-
-
+                style="@style/ButtonStyle"
+                android:onClick="removePointFromTeam1"
+                android:text="@string/minuspoint" />
         </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/marginTop"
+            android:background="@android:color/darker_gray" />
+
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/team1"/>
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"/>
+                style="@style/ScoreKeeperText"
+                android:paddingTop="@dimen/paddingTop"
+                android:text="@string/team2"
+                android:textSize="@dimen/headerTextSize" />
+
+            <TextView
+                android:id="@+id/pointsTeam2"
+                style="@style/ScoreKeeperText"
+                android:text="0"
+                android:textSize="@dimen/scoreTextSize" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/points"/>
+                style="@style/ButtonStyle"
+                android:onClick="addPointToTeam2"
+                android:text="@string/pluspoint" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sets"/>
-
-         </LinearLayout>
+                style="@style/ButtonStyle"
+                android:onClick="removePointFromTeam2"
+                android:text="@string/minuspoint" />
+        </LinearLayout>
     </LinearLayout>
 
     <Button
+        style="@style/ButtonStyle"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="@string/reset"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:onClick="resetScore"
+        android:text="@string/reset" />
 
-</LinearLayout>
+</RelativeLayout>
